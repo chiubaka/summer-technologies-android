@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
+
+import java.io.ByteArrayOutputStream;
 
 public class ParseStarterProjectActivity extends Activity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -42,6 +45,20 @@ public class ParseStarterProjectActivity extends Activity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageView.setImageBitmap(imageBitmap);
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] image = stream.toByteArray();
+
+            ParseFile file = new ParseFile("test.png", image);
+            file.saveInBackground();
+
+            ParseObject imgUpload = new ParseObject("ImageUpload");
+
+            imgUpload.put("ImageName", "Test");
+            imgUpload.put("ImageFile", file);
+
+            imgUpload.saveInBackground();
         }
     }
 
