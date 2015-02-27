@@ -25,11 +25,6 @@ public class ParseStarterProjectActivity extends Activity {
 		setContentView(R.layout.main);
 
         mImageView = (ImageView) findViewById(R.id.image_view);
-
-		ParseAnalytics.trackAppOpenedInBackground(getIntent());
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
 	}
 
     private void dispatchTakePictureIntent() {
@@ -50,14 +45,11 @@ public class ParseStarterProjectActivity extends Activity {
             imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
             byte[] image = stream.toByteArray();
 
-            ParseFile file = new ParseFile("test.png", image);
+            ParseFile file = new ParseFile(java.util.UUID.randomUUID() + ".png", image);
             file.saveInBackground();
 
             ParseObject imgUpload = new ParseObject("ImageUpload");
-
-            imgUpload.put("ImageName", "Test");
             imgUpload.put("ImageFile", file);
-
             imgUpload.saveInBackground();
         }
     }
