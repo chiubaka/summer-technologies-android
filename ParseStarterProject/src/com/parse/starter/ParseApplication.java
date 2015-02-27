@@ -27,7 +27,7 @@ public class ParseApplication extends Application {
         ParseUser.getCurrentUser().saveInBackground();
         ParseACL defaultACL = new ParseACL();
         // Optionally enable public read access.
-        // defaultACL.setPublicReadAccess(true);
+        defaultACL.setPublicReadAccess(true);
         ParseACL.setDefaultACL(defaultACL, true);
     }
 }
