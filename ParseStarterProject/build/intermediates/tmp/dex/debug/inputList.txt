@@ -1,0 +1,4 @@
+/Users/dchiu/Developer/summer_technologies/Parse-Starter-Project-1.8.2/ParseStarterProject/build/intermediates/classes/debug
+/Users/dchiu/Developer/summer_technologies/Parse-Starter-Project-1.8.2/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-97404c7b9002ad8cd5ecfd5b3daac99f8f0572d6.jar
+/Users/dchiu/Developer/summer_technologies/Parse-Starter-Project-1.8.2/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.2-65c2e56c749544665c72f596fde58adc3d5459ee.jar
+/Users/dchiu/Developer/summer_technologies/Parse-Starter-Project-1.8.2/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.2-31f766317a3f66fb569ebc9e2ef8e90afaa93a6f.jar
